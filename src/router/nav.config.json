@@ -1,0 +1,272 @@
+[
+	{
+		"name": "账号管理",
+		"icon": "ocon-account2",
+		"resourceCode": "oper_menu_account",
+		"items": [{
+		"name": "司机账号管理",
+		"component": "Driver",
+		"resourceCode": "oper_menu_account_1",
+		"path": "/account/driver"
+		},{
+		"name": "调度账号管理",
+		"component": "Dispatcher",
+		"resourceCode": "oper_menu_account_2",
+		"path": "/account/dispatcher"
+		},{
+		"name": "运盟承运商账号管理",
+		"component": "AlliCarrier",
+		"resourceCode": "oper_menu_account_3_1",
+		"path": "/account/alli_carrier"
+		},{
+		"name": "承运商审核账号管理",
+		"component": "CheckCarrier",
+		"resourceCode": "oper_menu_account_4",
+		"path": "/account/check_carrier"
+		},{
+		"name": "运营账号管理",
+		"component": "Operator",
+		"resourceCode": "oper_menu_account_5",
+		"path": "/account/operator_account"
+		},{
+		"component": "modPwd",
+		"hidden": true,
+		"name": "修改密码",
+		"path": "/mod_pwd"
+		}]
+	},
+	{
+		"name": "承运商",
+		"icon": "ocon-carrier",
+		"resourceCode": "oper_menu_camel",
+		"items": [{
+		"name": "承运商管理",
+		"component": "Carrier",
+		"resourceCode": "oper_menu_camel_1",
+		"path": "/carrier/carrier"
+		},{
+		"name": "承运商详情",
+		"hidden": true,
+		"component": "carrierDetail",
+		"path": "/carrier/carrier_detail"
+		}]
+	},
+	{
+		"name": "车辆管理",
+		"icon": "icon-nav_vehicle",
+		"resourceCode": "oper_menu_truck",
+		"items": [{
+			"name": "调度车辆管理",
+			"component": "Car",
+			"resourceCode": "oper_menu_truck_1",
+			"path": "/car/kk_car"
+		}, {
+			"name": "承运商车辆管理",
+			"component": "CarrierCar",
+			"resourceCode": "oper_menu_truck_2",
+			"path": "/car/carrier_car"
+		}, {
+			"name": "承运商车辆详情",
+			"component": "CarrierCarDetail",
+			"resourceCode": "oper_menu_truck_3",
+			"hidden": true,
+			"path": "/car/carrier_car_detail"
+		}]
+	},
+	{
+		"name": "线路管理",
+		"icon": "ocon-line",
+		"resourceCode": "oper_menu_line",
+		"items": [{
+		"name": "路段时效管理",
+		"component": "Effect",
+		"resourceCode": "oper_menu_line_1",
+		"path": "/line/effect_line"
+		}, {
+		"name": "金刚线路管理",
+		"component": "Line",
+		"resourceCode": "oper_menu_line_2",
+		"path": "/line/kk_line"
+		}, {
+		"name": "camel线路管理",
+		"component": "camelLine",
+		"resourceCode": "oper_menu_line_3",
+		"path": "/line/camel_line"
+		}]
+	},
+	{
+		"name": "广告管理",
+		"icon": "ocon-advert",
+		"resourceCode": "oper_menu_advert",
+		"items": [ {
+		"name": "资源管理",
+		"component": "advertResource",
+		"path": "/advert/resource"
+		}, {
+		"name": "广告投放",
+		"component": "advertPutin",
+		"path": "/advert/putin"
+		}, {
+		"name": "广告设置",
+		"hidden": true,
+		"component": "advertPutinAdd",
+		"path": "/advert/putin_add"
+		}, {
+		"name": "数据统计",
+		"component": "advertCount",
+		"path": "/advert/advert_count"
+		}, {
+		"name": "数据统计-单个详情",
+		"hidden": true,
+		"component": "advertCountDetail",
+		"path": "/advert/count_detail"
+		}, {
+		"name": "数据统计-汇总统计",
+		"hidden": true,
+		"component": "advertCountMore",
+		"path": "/advert/count_detail_more"
+		}]
+	},
+	{
+		"name": "运单管理",
+		"icon": "icon-nav_dispatching",
+		"resourceCode": "oper_menu_tp",
+		"items": [{
+		"name": "A线&无缝对接运单",
+		"component": "Waybill",
+		"resourceCode": "oper_menu_tp_A",
+		"path": "/waybill/waybill/A"
+		},{
+      "name": "B线运单管理",
+      "component": "Waybill",
+      "resourceCode": "oper_menu_tp_B",
+      "path": "/waybill/waybill/B"
+    }, {
+      "name": "运单日志",
+      "hidden": true,
+      "component": "waybillLog",
+      "path": "/waybill/waybill_log"
+    }]
+	},
+	{
+		"name": "日志管理",
+		"icon": "icon-calendar",
+		"resourceCode": "oper_menu_log",
+		"items": [{
+		"name": "操作日志",
+		"component": "Logs",
+		"resourceCode": "oper_menu_log_1",
+		"path": "/logs/op_logs"
+		}]
+	},
+	{
+		"name": "配置中心",
+		"icon": "ocon-set",
+		"resourceCode": "oper_menu_truckconf",
+		"items": [{
+				"name": "车辆品牌管理",
+				"component": "Brand",
+				"resourceCode": "oper_menu_truckconf_1",
+				"path": "/set/brand"
+			}, {
+				"name": "结算车型管理",
+				"component": "Settlement",
+				"resourceCode": "oper_menu_truckconf_2",
+				"path": "/set/settlement"
+			},{
+				"name": "配置字典管理",
+				"component": "Dict",
+				"resourceCode": "oper_menu_truckconf_3",
+				"path": "/set/dict"
+			}]
+	},
+	{
+		"name": "GPS数据分析",
+		"icon": "ocon-gps",
+		"items": [{
+		"name": "数据查询概览",
+		"component": "Overview",
+		"path": "/gps/overview"
+		}, {
+		"name": "运单定位查询统计",
+		"component": "Location",
+		"path": "/gps/location"
+		}, {
+		"name": "运单轨迹分析",
+		"component": "Trail",
+		"path": "/gps/trail"
+		}, {
+		"name": "设备车辆定位数据接入统计明细",
+		"component": "overLocat",
+		"hidden": true,
+		"path": "/gps/over_locat"
+		}, {
+		"name": "月份查询统计",
+		"component": "overMonth",
+		"hidden": true,
+		"path": "/gps/over_month"
+		}, {
+		"name": "车辆查询明细",
+		"component": "overCar",
+		"hidden": true,
+		"path": "/gps/over_car"
+		}]
+	},
+	{
+		"name": "系统日志分析",
+		"icon": "icon-calendar",
+		"resourceCode": "oper_log_analysis",
+		"items": [
+			{
+				"name": "日志参数配置",
+				"component": "logParam",
+				"path": "/logAnalysis/log_param"
+			},
+			{
+				"name": "系统日志管理",
+				"component": "logManage",
+				"path": "/logAnalysis/log_manage"
+			}
+		]
+	},
+	{
+		"name": "圆通基础设置",
+		"icon": "ocon-account2",
+		"resourceCode": "oper_log_analysis",
+		"items": [
+			{
+				"name": "组织管理",
+				"component": "organizeManage",
+				"path": "/basedata/organize"
+			},
+			{
+				"name": "组织详情",
+				"component": "orgDetail",
+				"hidden": true,
+				"path": "/basedata/org_detail"
+			},
+			{
+				"name": "场地管理",
+				"component": "placeManage",
+				"path": "/basedata/place"
+			}]
+		},
+		{
+		"name": "协议管理",
+		"icon": "icon-calendar",
+		"resourceCode": "oper_log_analysis",
+		"items": [
+			{
+				"name": "协议管理",
+				"component": "agreeList",
+				"path": "/agreement/list"
+			},
+			{
+				"name": "日志管理",
+				"component": "agreeRecord",
+				"hidden": true,
+				"path": "/agreement/record"
+			}
+		]
+	}
+]
