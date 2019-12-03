@@ -1,6 +1,6 @@
 <template>
 	<div class="find-container">
-		<h3>找回密码</h3>333333221113333333
+		<h3>找回密码</h3>333333
     <img src="../../assets/img/cql.jpg">
     <img src="../../assets/img/icon.png">
 		<!-- <Form  inline="inline" :model="findForm" ref="findForm" :label-width="140" :rules="rules" class="camel-add-box">
@@ -105,11 +105,14 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../assets/css/reset.scss';
+
 .find-container {
 	height: 100%;
 	background: white;
 	padding-top: 100px;
-	text-align: center;
+  text-align: center;
+  box-sizing: border-box;
 	h3 {
 		margin-bottom: 30px;
 	};
@@ -118,21 +121,7 @@ export default {
 		float: left;
 	};
 	.code_btn {
-		// width: 120px;
 		float: right;
 	}
-}
-.camel-add-box{
-    margin: 0 auto;
-    width: 500px;
-    .k-form .k-form-item{
-       width: 100%;
-       .k-form-item-content{
-           width: 60%;
-       }
-    }
-    .block{
-      width: 100%;
-    }
 }
 </style>

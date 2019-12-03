@@ -1,5 +1,2 @@
 module.exports = file => () => import('../views/' + file + '.vue')
-// module.exports = file => resolve => require(['../views/' + file + '.vue'], resolve).default
-// console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
-// module.exports = file => resolve => require.ensure([], () => resolve(require('../views/' + file + '.vue')) )
-// module.exports = file => resolve => require(['../views/' + file + '.vue'], resolve).default
+// 动态import 是由插件dynamic-import-webpack 支持的，未来es里也会支持

@@ -1,7 +1,5 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const miniCssExtractPlugin = require('mini-css-extract-plugin') // css分离提取 老的ExtractTextPlugin
-
 module.exports = {
     entry: {
         app: path.resolve(__dirname, '../src/main.js'),
@@ -14,7 +12,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            'vue$': 'vue/dist/vue.js',
+            // 'vue$': 'vue/dist/vue.js',
             '@': path.resolve(__dirname, '../src')
         }
     },
@@ -23,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.vue$/,
-                loader: 'vue-loader'
+              loader: 'vue-loader'
                 // options: vueLoaderConfig
             },
             {
@@ -36,14 +34,6 @@ module.exports = {
                         "dynamic-import-webpack" // 支持动态import
                     ]
                 }
-            },
-            {
-                test: /\.scss$/,
-                use: [miniCssExtractPlugin.loader,
-                    // "style-loader", // 将 JS 字符串生成为 style 节点
-                    "css-loader", // 将 CSS 转化成 CommonJS 模块
-                    "sass-loader" // 将 Sass 编译成 CSS
-                  ]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -64,10 +54,6 @@ module.exports = {
         ]
     },
     plugins:[
-        new VueLoaderPlugin(),
-        new miniCssExtractPlugin({
-          filename: "css/[name][chunkhash].css",
-          chunkFilename: "css/[id][chunkhash].css"
-        })
+        new VueLoaderPlugin()
     ]
 }

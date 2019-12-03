@@ -6,10 +6,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // 以树图的方式展示打包后的文件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 清空dist文件夹
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin') // css压缩
-// const miniCssExtractPlugin = require('mini-css-extract-plugin') // css分离提取, 老的ExtractTextPlugin
+const miniCssExtractPlugin = require('mini-css-extract-plugin') // css分离提取 老的ExtractTextPlugin
 
 let webpackConfig = merge(baseWebpackConfig, {
     mode: 'production',
+    module: {
+      rules: [
+          {
+              test: /\.s?css$/,
+              use: [
+                   {loader:  miniCssExtractPlugin.loader // 用miniCssExtractPlugin代替了style-loader,以便css提取
+                   },
+                   "css-loader", // 将 CSS 转化成 CommonJS 模块
+                   "postcss-loader",
+                   "sass-loader" // 将 Sass 编译成 CSS
+                  ]
+          }
+      ]
+    },
     devtool: false,
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -28,6 +42,10 @@ let webpackConfig = merge(baseWebpackConfig, {
             }
         }),
         
+        new miniCssExtractPlugin({
+          filename: "css/[name][chunkhash].css",
+          chunkFilename: "css/[id][chunkhash].css"
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../public/index.html'),
             inject: true,
@@ -49,6 +67,10 @@ let webpackConfig = merge(baseWebpackConfig, {
             chunksSortMode: 'dependency'
         }),
         new CleanWebpackPlugin(),
+        
+        // new webpack.optimize.LimitChunkCountPlugin({
+        //   maxChunks: 1
+        // }),
         // new BundleAnalyzerPlugin()
         // new CopyWebpackPlugin([
         //     {
@@ -87,6 +109,7 @@ let webpackConfig = merge(baseWebpackConfig, {
         ]
     }
 })
+
 // if (config.build.bundleAnalyzerReport) {
 //     let BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 //     webpackConfig.plugins.push(new BundleAnalyzerPlugin())

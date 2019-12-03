@@ -13,18 +13,28 @@ const assetsPublicPath = '/'
 
 module.exports = merge(baseWebpackConfig, {
     mode: 'development',
-    // module: {
-    //     rules: [
-    //         {
-    //             test: /\.(js|vue)$/,
-    //             loader: 'eslint-loader',
-    //             enforce: "pre",
-    //             include: [ path.resolve(__dirname, 'src')],
-    //             options: {
-    //                 formatter: require('eslint-friendly-formatter')
-    //             }
-    //         }]
-    // },
+    module: {
+        rules: [
+            {
+                test: /\.s?css$/,
+                use: ["style-loader", // 将 JS 字符串生成为 style 节点
+                    "css-loader", // 将 CSS 转化成 CommonJS 模块
+                    "postcss-loader",
+                    "sass-loader" // 将 Sass 编译成 CSS
+                  ]
+            }
+        ]
+        // rules: [
+        //     {
+        //         test: /\.(js|vue)$/,
+        //         loader: 'eslint-loader',
+        //         enforce: "pre",
+        //         include: [ path.resolve(__dirname, 'src')],
+        //         options: {
+        //             formatter: require('eslint-friendly-formatter')
+        //         }
+        //     }]
+    },
     devtool: '#source-map',
     plugins: [
         new HtmlWebpackPlugin({
